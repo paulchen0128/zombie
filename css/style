@@ -1,0 +1,15 @@
+    #zombie {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+    #score {
+    position: static;
+    text-align: center;
+    font-size: 50px;
+    }
+    #button {
+    position: absolute;
+    left: 50%;
+    bottom: 0%
+    }
