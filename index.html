@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body style="background-color:lightblue">
+
+<img src="images/zombie.png" id="zombie" onclick="dead();">
+<h1 id="score">0</h1>
+
+<button onclick="restart()" id="button">Reset</button>
+
+<script>
+
+    let audio = new Audio('src/sound.mp4');
+    let zombie =  document.getElementById("zombie");
+    let total = 0
+
+    function dead() {
+    move();
+    zombie.src = "images/zombiedie.gif";
+    audio.play();
+    setInterval(function(){zombie.src = "images/zombie.png";}, 1200);
+    total = total + 1;
+    score();
+    }
+
+    function score() {
+    document.getElementById('score').innerHTML = total;
+    }
+
+    function move() {
+    let z = window.innerWidth - 128;
+    let c = window.innerHeight - 128;
+    let x = Math.random()*z;
+    let y = Math.random()*c;
+    console.log(x,y,z,c)
+
+    zombie.style.top = y + 'px';
+    zombie.style.left = x + 'px';
+    }
+
+    function restart() {
+    total = 0;
+    document.location.href = "";
+    }
+
+
+
+</script>
+
+</body>
+</html>
