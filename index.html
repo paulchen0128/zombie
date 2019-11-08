@@ -19,8 +19,8 @@
     let total = 0
 
     function dead() {
-    zombie.src = "images/zombiedie.gif";
     move();
+    zombie.src = "images/zombiedie.gif";
     audio.play();
     setInterval(function(){zombie.src = "images/zombie.png";}, 1200);
     total = total + 1;
