@@ -20,11 +20,12 @@
 
     function dead() {
     zombie.src = "images/zombiedie.gif";
-    setInterval(move,1200);
+    moving = setInterval(move,1200);
     audio.play();
     setInterval(function(){zombie.src = "images/zombie.png";}, 1200);
     total = total + 1;
     score();
+    clearInterval(moving)
     }
 
     function score() {
