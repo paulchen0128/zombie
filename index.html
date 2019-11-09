@@ -17,14 +17,17 @@
     let audio = new Audio('src/sound.mp4');
     let zombie =  document.getElementById("zombie");
     let total = 0
+    
+    auto_move = setInterval(move,2000,zombie)
 
     function dead() {
-    move();
     zombie.src = "images/zombiedie.gif";
     audio.play();
-    setInterval(function(){zombie.src = "images/zombie.png";}, 1200);
+    id = setTimeout(function(){zombie.src = "images/zombie.png";}, 1200);
     total = total + 1;
     score();
+    clearInterval(auto_move);
+    auto_move = setInterval(move,2000,zombie);
     }
 
     function score() {
